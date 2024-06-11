@@ -6,7 +6,9 @@
   "scripts": {
     "test": "test",
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "build": "npm run build:js",
+    "build:js": "webpack --config webpack.config.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -16,7 +18,8 @@
   },
   "devDependencies": {
     "@types/socket.io-client": "^3.0.0",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "webpack": "^5.0.0"
   },
   "author": "Abhrajit Das",
   "license": "MIT"
