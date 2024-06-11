@@ -18,6 +18,19 @@ const Video = styled.video`
 `;
 
 function VideoChatApp(props) {
+  /**
+   * initial state: both player is neutral and have the option to call each other
+   *
+   * player 1 calls player 2: Player 1 should display: 'Calling {player 2 username},' and the
+   *                          'CallPeer' button should disappear for Player 1.
+   *                          Player 2 should display '{player 1 username} is calling you' and
+   *                          the 'CallPeer' button for Player 2 should also disappear.
+   *
+   * Case 1: player 2 accepts call - the video chat begins and there is no button to end it.
+   *
+   * Case 2: player 2 ignores player 1 call - nothing happens. Wait until the connection times out.
+   *
+   */
 
   const [stream, setStream] = useState();
   const [receivingCall, setReceivingCall] = useState(false);
