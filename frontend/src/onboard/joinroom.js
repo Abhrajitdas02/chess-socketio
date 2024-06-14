@@ -1,6 +1,8 @@
 import React from 'react'
 import JoinGame from './joingame'
 import ChessGame from '../chess/ui/chessgame'
+import { darkTheme, lightTheme } from "../chess/ui/Theme";
+import styled, { ThemeProvider } from "styled-components";
 
 class JoinRoom extends React.Component {
     state = {
@@ -19,10 +21,13 @@ class JoinRoom extends React.Component {
             inputText: typedText
         })
     }
-
-    render() {
     
-        return (<React.Fragment>
+  
+    
+    render() {
+        
+        return (
+            <React.Fragment>
             {
                 this.state.didGetUserName ? 
                 <React.Fragment>
@@ -31,7 +36,8 @@ class JoinRoom extends React.Component {
                 </React.Fragment>
             :
                <div>
-                    <h1 style={{textAlign: "center", marginTop: String((window.innerHeight / 3)) + "px"}}>Your Username:</h1>
+                
+                    <h1 style={{textAlign: "center", marginTop: String((window.innerHeight / 3)) + "px"}}>Enter Your Username:</h1> 
 
                     <input style={{marginLeft: String((window.innerWidth / 2) - 120) + "px", width: "240px", marginTop: "62px"}} 
                            ref = {this.textArea}
@@ -45,7 +51,7 @@ class JoinRoom extends React.Component {
                                 didGetUserName: true
                             })
                         }}>Submit</button>
-                </div>
+                                    </div>
             }
             </React.Fragment>)
     }

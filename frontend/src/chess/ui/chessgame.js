@@ -246,17 +246,8 @@ class ChessGame extends React.Component {
 }
 
 const ChessGameWrapper = (props) => {
-  /**
-   * player 1
-   *      - socketId 1
-   *      - socketId 2 ???
-   * player 2
-   *      - socketId 2
-   *      - socketId 1
-   */
 
-  // get the gameId from the URL here and pass it to the chessGame component as a prop.
-  const domainName = "https://video-chess.vercel.app";
+  const domainName = "https://chessmaster-seven.vercel.app";
   const color = React.useContext(ColorContext);
   const { gameid } = useParams();
   const [play] = useSound(chessMove);

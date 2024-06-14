@@ -5,6 +5,7 @@ import { ColorContext } from '../context/colorcontext'
 import {socket } from '../connection/socket';
 
 
+
 class CreateNewGame extends React.Component {
     state = {
         didGetUserName: false,
@@ -36,15 +37,14 @@ class CreateNewGame extends React.Component {
     }
 
     render() {
-        return (<React.Fragment>
-            {
-                this.state.didGetUserName ? 
+        return ( <React.Fragment>
+                {this.state.didGetUserName ? (
 
                 <Redirect to = {"/game/" + this.state.gameId}><button className="btn btn-success" style = {{marginLeft: String((window.innerWidth / 2) - 60) + "px", width: "120px"}}>Start Game</button></Redirect>
 
-            :
+                 ) :(
                <div>
-                    <h1 style={{textAlign: "center", marginTop: String((window.innerHeight / 3)) + "px"}}>Your Username:</h1>
+                    <h1 style={{textAlign: "center", marginTop: String((window.innerHeight / 3)) + "px"}}>Your Username:</h1> 
 
                     <input style={{marginLeft: String((window.innerWidth / 2) - 120) + "px", width: "240px", marginTop: "62px"}} 
                            ref = {this.textArea}
@@ -61,9 +61,10 @@ class CreateNewGame extends React.Component {
                             })
                             this.send()
                         }}>Submit</button>
-                </div>
-            }
-            </React.Fragment>)
+                </div>)
+                }
+                </React.Fragment>
+            )
     }
 }
 
